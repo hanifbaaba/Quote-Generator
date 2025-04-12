@@ -45,11 +45,6 @@ export default function Quote() {
         {" "}
         Get Quote
       </button>
-      <div className="flex justify-center items-center min-h-screen bg-blue-100">
-        <h1 className="text-4xl text-blue-500 font-bold">
-          Tailwind CSS is working!
-        </h1>
-      </div>
     </div>
   );
 }
