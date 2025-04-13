@@ -6,6 +6,8 @@ export default function Quote() {
     author: "Ralph Waldo Emerson",
   });
 
+  const [errorMsg, setErrorMsg] = useState(null);
+
   const API_URL = "https://api.api-ninjas.com/v1/quotes";
   const API_KEY = "GjPcFqohZlHh++lJrN7uZg==9YA7FXQC2TiUhme1";
   async function fetchQuote() {
@@ -23,7 +25,7 @@ export default function Quote() {
         category: quoteObj.category,
       });
     } catch (error) {
-      console.error("Could'nt Fetch Quote, Try again.", error);
+      setErrorMsg("Oops! Couldn’t fetch a new quote. Please try again.");
     }
   }
   useEffect(() => {
@@ -35,16 +37,16 @@ export default function Quote() {
   }
 
   return (
-    <div>
-      <div>
-        <h1>{quote.text}</h1>
-        <h3>{quote.author}</h3>
-        <h3>{quote.category}</h3>
-      </div>
-      <button className="button" onClick={getQuote}>
+    <div className="quote-container">
+      <h1 className="quote-text">{quote.text}</h1>
+      <h3 className="quote-author">~ {quote.author}</h3>
+      <h3 className="quote-category">- {quote.category}</h3>
+      <button className="quote-button" onClick={getQuote}>
         {" "}
         Get Quote
       </button>
     </div>
   );
 }
+
+//  "Oops! Couldn’t fetch a new quote. Please try again."
