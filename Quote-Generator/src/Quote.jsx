@@ -72,7 +72,6 @@ export default function Quote() {
     <div className="quote-container">
       <h1 className="quote-text">{quote.text}</h1>
       <h3 className="quote-author">~ {quote.author}</h3>
-      {/* <h3 className="quote-category">- {quote.category.toUpperCase([0])}</h3> */}
       <h3 className="quote-category">
         - {quote.category.charAt(0).toUpperCase() + quote.category.slice(1)}
       </h3>
